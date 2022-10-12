@@ -1,0 +1,116 @@
+import java.util.*;
+class Main
+{
+    public static void main(String[] args) 
+    { // a = valor do switch  x = variavel da função dobro;
+      //valor 1 e valor2 = variaveis da comparação de maior numero;
+      //fator = variavel do fator;
+      //numero = variavel que recebe valor para somatoria;
+      int a,x,valor1,valor2,media1,media2,media3,fator,numero; 
+      Scanner teclado = new Scanner(System.in);
+
+    System.out.print("Digite: \n1-Para inserir um valor e receber o dobro \n2-Para inserir dois numeros e compará-los\n3-Para inserir três números e ter a média\n4-Para inserir um número e receber o fatorial\n5-Para inserir um número inteiro e positivo e receber a soma dos elementos inteiros existentes entre 1 e o número\n\nA sua escolha é: ");
+    a = teclado.nextInt();
+
+      switch(a)
+  {
+  case 1:
+    System.out.println("\ndigite um numero para receber o valor dobrado: ");
+    x = teclado.nextInt();
+    System.out.println("O dobro desse valor é: "+dobro(x));
+      break;
+      
+  case 2:
+    System.out.println("Insira um numero para comparação: ");
+    valor1 = teclado.nextInt();
+    
+    System.out.println("Insira o segundo numero para comparação: ");
+    valor2 = teclado.nextInt();
+
+    System.out.println("O maior valor inserido é: "+maior(valor1,valor2));
+      break;
+    
+    case 3:
+    System.out.println("insira o primeiro valor para a média: ");
+    media1 = teclado.nextInt();
+
+    System.out.println("insira o segundo valor para a média: ");
+    media2 = teclado.nextInt();
+    
+    System.out.println("insira o terceiro valor para a média: ");
+    media3 = teclado.nextInt();
+
+    System.out.println("a media dos numeros inseridos é: " +media(media1,media2,media3));
+
+      break;
+      
+    case 4:
+    System.out.println("Insira o valor para receber o fatorial");
+    fator = teclado.nextInt();
+  
+    System.out.println("O fatorial desse número é: " +fatorial(fator));
+
+      break;
+      
+    case 5:
+    System.out.print("Insira um valor o qual deseja saber a somatoria: ");
+    numero = teclado.nextInt();
+
+    System.out.println("Somatoria desse numero é: "+somatorio(numero));
+      
+      break;
+ 
+      
+  default:
+      System.out.print("valor invalido");      
+  
+  }
+    }
+
+  public static int dobro(int x)
+  {
+    x = x*2;
+    return x;
+  }
+
+  public static int maior(int valor1,int valor2)
+    {
+      int maior=0;
+      if(valor1>valor2)
+      maior = valor1;
+      
+      if(valor2>valor1)
+      maior = valor2;
+      
+      return maior;
+    }
+
+  public static int media(int media1,int media2, int media3)
+  {
+    int media;
+
+    media = (media1+media2+media3)/3;
+    return media;    
+  }
+
+  public static int fatorial(int fator)
+  {
+    int i,multi=1;
+    
+    for(i=1;i<=fator;i++)
+    multi = multi * i;
+
+    return multi;
+  }  
+
+  public static int somatorio(int numero)
+  {
+    int i,som=0;
+    
+    for(i=1;i<=numero;i++)
+    som = som + i;
+
+    return som; 
+  }
+}
+
