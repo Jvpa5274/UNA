@@ -1,0 +1,76 @@
+import java.util.*;
+class Main
+  
+{
+  public static void main(String[] args) 
+  {
+    Scanner teclado = new Scanner(System.in);
+    int a,b,escolha;
+    
+    System.out.print("escolha a operação digitando:\n1- Somar o primero numero com o segundo\n2-Para subtrair o primeiro pelo segundo\n3-Para multiplica-los\nSua escolha é: ");
+    escolha = teclado.nextInt();
+
+    switch(escolha)
+    {
+      case 1:
+        System.out.print("digite o primeiro valor: ");
+        a = teclado.nextInt();
+        
+        System.out.print("digite o segundo valor: ");
+        b = teclado.nextInt();        
+        System.out.print("a soma desses valores é: "+soma(a,b));
+break;
+        case 2:
+        System.out.print("digite o primeiro valor: ");
+        a = teclado.nextInt();
+        
+        System.out.print("digite o segundo valor: ");
+        b = teclado.nextInt();        
+        System.out.print("a subtração desses valores é: "+subtracao(a,b));
+break;
+      case 3:
+        System.out.print("digite o primeiro valor: ");
+        a = teclado.nextInt();
+        
+        System.out.print("digite o segundo valor: ");
+        b = teclado.nextInt();        
+        System.out.print("a multiplicação desses valores é: "+multi(a,b)); 
+break;
+
+      default:
+        System.out.println("Valor invalido!");
+    }
+  }
+
+public static int soma(int a, int b)
+  {
+    int valor;
+    valor = a+b;
+    return valor;  
+  }
+  public static int subtracao(int a, int b)
+  {
+    int valor;
+    valor = a-b;
+    return valor;  
+  }
+  public static int multi(int a, int b)
+  {
+    int i,valor=0;
+
+    if(b>0)
+    {
+      for(i=0;i<b;i++)
+      valor = valor+a; 
+    }
+      if(b<0)
+    {
+      for(i=0;i>b;i--)
+      valor = valor+a; 
+
+      valor = -valor;
+    }  
+    return valor;
+  }
+  
+}
